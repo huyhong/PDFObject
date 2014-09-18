@@ -127,7 +127,6 @@ var PDFObject = function (obj){
             } catch (e) {
                 return false;
             }
-            return false;
         }
     };
 
