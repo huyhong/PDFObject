@@ -112,7 +112,7 @@ var PDFObject = function (obj){
         }
 
         // pdf.js from Chrome Web Store
-        if(__isPDFJSExtensionInstalled('oemmndcbldboiebfnladdacbdfmadadm')) {
+        if(_isPDFJSExtensionInstalled('oemmndcbldboiebfnladdacbdfmadadm')) {
             return true;
         }
 
