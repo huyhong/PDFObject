@@ -2,7 +2,12 @@ PDFObject is a lightweight JavaScript library for dynamically embedding PDFs in 
 Modeled after SWFObject.
 
 
-This fork supports pdf on iPad and the pdf.js extension for firefox, opera and chrome.
+This fork additionally supports:
+
+ * pdf on iPad
+ * Firefox
+ * pdf.js extension for opera and chrome.
+ * Internet Explorer 11
 
 
 PDFObject v1.3.0
