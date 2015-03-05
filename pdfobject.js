@@ -54,21 +54,16 @@ var PDFObject = function (obj){
 
         var axObj = null;
 
-        if (window.ActiveXObject) {
+        axObj = createAXO("AcroPDF.PDF");
 
-            axObj = createAXO("AcroPDF.PDF");
+        //If "AcroPDF.PDF" didn't work, try "PDF.PdfCtrl"
+        if(!axObj){ axObj = createAXO("PDF.PdfCtrl"); }
 
-            //If "AcroPDF.PDF" didn't work, try "PDF.PdfCtrl"
-            if(!axObj){ axObj = createAXO("PDF.PdfCtrl"); }
-
-            //If either "AcroPDF.PDF" or "PDF.PdfCtrl" are found, return true
-            if (axObj !== null) { return true; }
-
-        }
+        //If either "AcroPDF.PDF" or "PDF.PdfCtrl" are found, return true
+        if (axObj !== null) { return true; }
 
         //If you got to this point, there's no ActiveXObject for PDFs
         return false;
-
     };
 
 
@@ -117,7 +112,7 @@ var PDFObject = function (obj){
         }
 
         return false;
-     
+
         function _isPDFJSExtensionInstalled(id) {
             try {
                 var x = new XMLHttpRequest();
