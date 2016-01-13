@@ -1,8 +1,9 @@
 /*
-    PDFObject v1.2.20111123
+    PDFObject v1.2.20160112
     https://github.com/pipwerks/PDFObject
     Copyright (c) Philip Hutchison
     MIT-style license: http://pipwerks.mit-license.org/
+    Modified by Huy Hong (https://github.com/huyhong) with cherry-picked commits from https://github.com/davious/PDFObject and https://github.com/teambition/PDFObject
 */
 
 /*jslint browser: true, sloppy: true, white: true, plusplus: true */
@@ -276,9 +277,8 @@ var PDFObject = function (obj){
             }
 
         }
-        targetNode.innerHTML = !window.chrome ? '<object data="' + url +'" type="application/pdf" width="' + width + '" height="' + height + '"></object>'
-            : '<iframe src="' + url + '" width="' + width + '" height="' + height + '"></iframe>';
-        return targetNode.getElementsByTagName("object")[0];
+        targetNode.innerHTML = '<iframe src="' + url + '" width="' + width + '" height="' + height + '"></iframe>';
+        return targetNode.getElementsByTagName("iframe")[0];
 
     };
 
